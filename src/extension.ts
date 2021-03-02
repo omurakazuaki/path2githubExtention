@@ -8,7 +8,7 @@ const resolveGithubUrl = async(editor: vscode.TextEditor) => {
   const start = selection.start.line ? selection.start.line + 1 : undefined;
   const end = selection.end.line && selection.end.line > selection.start.line ? selection.end.line + 1 : undefined;
   return await path2github.resolve(document.fileName, start, end);
-}
+};
 
 export function activate(context: vscode.ExtensionContext) {
 

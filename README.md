@@ -9,7 +9,7 @@ Open the selected file on Github.
 1. Select a file in Explorer or select text in the editor.
 1. Select `Open on Github` from the menu.
 
-## Blame on Github
+### Blame on Github
 
 1. Select a file in Explorer.
 1. Select `Blame on Github` from the menu.
