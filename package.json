@@ -1,8 +1,8 @@
 {
   "name": "path2github",
   "displayName": "Path2Github",
-  "description": "This is the README for your extension \"path2github\". After writing up a brief description, we recommend including the following sections.",
-  "version": "0.0.1",
+  "description": "Open the selected file on Github.",
+  "version": "0.0.2",
   "publisher": "omurakazuaki",
   "engines": {
     "vscode": "^1.53.0"
@@ -14,6 +14,7 @@
     "onCommand:path2github.open",
     "onCommand:path2github.blame",
     "onCommand:path2github.openSelection",
+    "onCommand:path2github.openWorkflow",
     "onCommand:path2github.newIssue"
   ],
   "main": "./dist/extension.js",
@@ -23,6 +24,11 @@
         "when": "filesExplorerFocus",
         "command": "path2github.open",
         "title": "Open on Github"
+      },
+      {
+          "when": "resourceDirname =~ /.*..github.workflows$/ && resourceExtname == .yml",
+        "command": "path2github.openWorkflow",
+        "title": "Open Workflows on Github"
       },
       {
         "when": "filesExplorerFocus && !explorerResourceIsFolder",
@@ -48,6 +54,11 @@
           "group": "z_commands"
         },
         {
+          "when": "resourceDirname =~ /.*..github.workflows$/ && resourceExtname == .yml",
+          "command": "path2github.openWorkflow",
+          "group": "z_commands"
+        },
+        {
           "when": "filesExplorerFocus && !explorerResourceIsFolder",
           "command": "path2github.blame",
           "group": "z_commands"
@@ -57,6 +68,11 @@
         {
           "when": "editorHasSelection || editorTextFocus",
           "command": "path2github.openSelection",
+          "group": "z_commands"
+        },
+        {
+          "when": "resourceDirname =~ /.*..github.workflows$/ && resourceExtname == .yml",
+          "command": "path2github.openWorkflow",
           "group": "z_commands"
         },
         {
@@ -72,8 +88,9 @@
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
+    "publish": "vsce publish",
     "dev:package": "vsce package -o dist",
-    "dev:install": "code --install-extension dist/path2github-0.0.1.vsix",
+    "dev:install": "code --install-extension dist/path2github-0.0.2.vsix",
     "dev:deploy": "npm run dev:package && npm run dev:install",
     "test-compile": "tsc -p ./",
     "test-watch": "tsc -watch -p ./",

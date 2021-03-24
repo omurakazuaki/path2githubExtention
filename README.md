@@ -25,6 +25,11 @@ Open the selected file on Github.
 
 ![](images/new_github_issue.gif)
 
+### Open workflow on Github
+
+1. Select a file in Explorer or select text in the editor.
+1. Select `Open Workflows on Github` from the menu.
+
 ## Requirements
 
 - The file must be committed to git.

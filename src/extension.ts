@@ -67,6 +67,23 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.window.showErrorMessage(err.message);
     }
   }));
+
+  context.subscriptions.push(vscode.commands.registerCommand('path2github.openWorkflow', async() => {
+    try {
+      const editor = vscode.window.activeTextEditor;
+      if (editor) {
+        const blobUrl = await resolveGithubUrl(editor);
+        const [repoUrl, actionPath] = blobUrl.split(/\/blob\/[a-fA-F0-9]{40}\/.github\//);
+        const actionUrl = path.join(repoUrl, 'actions', actionPath);
+        open(actionUrl);
+      } else {
+        throw new Error('No selected editor');
+      }
+    } catch (err) {
+      vscode.window.showErrorMessage(err.message);
+    }
+  }));
+
 }
 
 export function deactivate() {}
