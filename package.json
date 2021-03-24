@@ -26,7 +26,7 @@
         "title": "Open on Github"
       },
       {
-          "when": "resourceDirname =~ /.*..github.workflows$/ && resourceExtname == .yml",
+        "when": "resourceDirname =~ /.*..github.workflows$/ && resourceExtname == .yml",
         "command": "path2github.openWorkflow",
         "title": "Open Workflows on Github"
       },
