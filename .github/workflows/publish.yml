@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: '13.13.0'
 
+      - name: Setup npm
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
       - name: Install modules
         run: npm install
 
@@ -25,5 +28,5 @@ jobs:
 
       - name: Publish
         env:
-          VSCE_TOKEN: ${{secrets.VSCE_TOKEN}}
-        run: vsce publish -p $VSCE_TOKEN
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: npx vsce publish -p $VSCE_TOKEN
