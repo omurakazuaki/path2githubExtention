@@ -2,7 +2,7 @@
   "name": "path2github",
   "displayName": "Path2Github",
   "description": "Open the selected file on Github.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "omurakazuaki",
   "engines": {
     "vscode": "^1.53.0"
@@ -357,12 +357,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/omurakazuaki/path2githubExtention.git"
+    "url": "git+ssh://git@github.com/omurakazuaki/path2github-vsce.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/omurakazuaki/path2githubExtention/issues"
+    "url": "https://github.com/omurakazuaki/path2github-vsce/issues"
   },
-  "homepage": "https://github.com/omurakazuaki/path2githubExtention#readme"
+  "homepage": "https://github.com/omurakazuaki/path2github-vsce#readme"
 }
