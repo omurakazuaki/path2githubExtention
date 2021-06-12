@@ -204,7 +204,7 @@
     "functional-red-black-tree": "^1.0.1",
     "get-caller-file": "^2.0.5",
     "get-stream": "^6.0.0",
-    "glob-parent": "^5.1.1",
+    "glob-parent": "^5.1.2",
     "glob-to-regexp": "^0.4.1",
     "globals": "^12.4.0",
     "globby": "^11.0.2",
